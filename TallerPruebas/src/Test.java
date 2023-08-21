@@ -46,7 +46,23 @@ public class Test extends TestCase {
 		assertEquals(403.5f,gerente.cs());
 	}
 	
-	
+	// Test para cuando el mes es impar
+    public void testMonthOdd() {
+        // Como ejemplo, se usó el mes 9 (Septiembre)
+        assertEquals(400f + 386.0f/12*2, empleado.cs());
+    }
+    
+    // Test para cuando el mes es par
+    public void testMonthEven() {
+        // Como ejemplo, se usó el mes 8 (Agosto)
+        assertEquals(400f, empleado.cs());
+    }
+    
+    // Test para el constructor de Employee
+    public void testEmployeeConstructor() {
+        Employee testEmployee = new Employee(500, "USD", 10, EmployeeType.Manager);
+        assertEquals(500f+ (10 * 0.7F), testEmployee.cs()); // Asegurar que se creó correctamente
+    }
 	
 }
 
